@@ -1,0 +1,25 @@
+{
+  "name": "es6-test-env",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zainkai/es6-test-env.git"
+  },
+  "author": "Kevin Turkington (Zainkai)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zainkai/es6-test-env/issues"
+  },
+  "homepage": "https://github.com/zainkai/es6-test-env#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0"
+  }
+}
