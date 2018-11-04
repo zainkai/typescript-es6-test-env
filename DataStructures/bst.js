@@ -39,8 +39,6 @@ const levelOrderTraversal = (root) => {
 function levelOrder(root) {
   let map = {}
   levelOrderHelper(root, map, 0)
-
-  let stk = []
   return Object.keys(map).map(key => map[key])
 }
 function levelOrderHelper(root, map, level) {
@@ -84,3 +82,14 @@ var preorderTraversal = function(root, stk = []) {
   return stk
 };
 
+
+var maxDepth = function(root, level =1, obj={}) {
+  if(root === null) return 0
+
+  obj.depth = Math.max(
+    level,
+    maxDepth(root.left, level+1, obj),
+    maxDepth(root.right, level+1, obj)
+  )
+  return obj.depth
+}

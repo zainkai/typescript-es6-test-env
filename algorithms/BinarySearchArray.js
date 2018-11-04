@@ -6,11 +6,14 @@ function binarySearchArr(num, find) {
     let mid = Math.floor((low + high) /2)
     if (num[mid] === find) return mid
     if (num[mid] > find) {
-      high = mid -1
+      high = mid
     } else {
-      low = mid +1
+      low = mid
     }
   }
+
+  if(num[left] === find) return left
+  if(num[right] === find) return right
   return -1
 }
 
