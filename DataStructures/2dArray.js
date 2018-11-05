@@ -1,4 +1,5 @@
 function rotateClockWise (matrix) {
+  if(matrix.length === 0) return []
   const rows = matrix.length, cols = matrix[0].length
   let newMatrix = new Array(cols)
   for(let i = 0; i < cols; i++) {
@@ -14,6 +15,7 @@ function rotateClockWise (matrix) {
 }
 
 function rotateCounterClockWise (matrix) {
+  if(matrix.length === 0) return []
   const rows = matrix.length, cols = matrix[0].length
   let newMatrix = new Array(cols)
   for(let i = 0; i < cols; i++) {
@@ -29,10 +31,12 @@ function rotateCounterClockWise (matrix) {
 }
 
 function invertVertical(matrix) {
+  if(matrix.length === 0) return []
   return matrix.reverse()
 }
 
 function invertHorizontal(matrix) {
+  if(matrix.length === 0) return []
   matrix.forEach(e => e.reverse())
   return matrix
 }
