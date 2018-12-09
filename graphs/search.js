@@ -15,14 +15,15 @@ function dfs(graph, query) {
 
     graph.filter(t => t[0] === curr).forEach(edge => {
       const [u,v,w] = edge
-      if(!arr.includes(v)) {
+      if(map[v] === undefined || map[v] === Infinity) {
         arr.push(v)
       }
 
       map[v] = Math.min(map[v] || Infinity, map[u] + w)
     })
   }
-  return map[qEnd] || -1
+
+  return map[qEnd] === undefined ? -1 : map[qEnd]
 }
 
 console.log(dfs(
