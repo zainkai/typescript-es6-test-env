@@ -3,14 +3,8 @@ const SORT_SETTING = {
   DESC:'DESC'
 }
 const mergeMapArray = {
-  [SORT_SETTING.ASC]: (result, arr1, iter1, arr2, iter2) => [...result,
-    ...arr1.slice(iter1,arr1.length),
-    ...arr2.slice(iter2,arr2.length)
-  ],
-  [SORT_SETTING.DESC]: (result, arr1, iter1, arr2, iter2) => [...result,
-    ...arr2.slice(iter2,arr2.length),
-    ...arr1.slice(iter1,arr1.length)
-  ]
+  [SORT_SETTING.ASC]: (result, arr1, arr2) => [...result, ...arr1, ...arr2],
+  [SORT_SETTING.DESC]: (result, arr1, arr2) => [...result, ...arr2, ...arr1]
 }
 const mergeMapCompare = {
   [SORT_SETTING.ASC]: (a,b) => a < b,
@@ -18,7 +12,7 @@ const mergeMapCompare = {
 }
 
 
-function mergeSort(arr, setting=SORT_SETTING.DESC) { // descending
+function mergeSort(arr, setting=SORT_SETTING.ASC) { // descending
   if(arr.length <= 1) return arr
   const mid = Math.floor(arr.length/2)
   return mergeArray(
@@ -39,7 +33,11 @@ function mergeArray(arr1, arr2, setting) {
       iter2 += 1
     }
   }
-  return mergeMapArray[setting](result, arr1, iter1, arr2, iter2)
+  return mergeMapArray[setting](
+    result,
+    arr1.slice(iter1,arr1.length),
+    arr2.slice(iter2,arr2.length)
+  )
 }
 
 console.log(mergeSort([5,3,7,1]))
