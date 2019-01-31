@@ -2,10 +2,10 @@
   "name": "es6-test-env",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "babel-node ./index.js"
+    "start": "babel-node --extensions \".ts\" ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,8 @@
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.0"
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0"
   },
   "devDependencies": {
     "jest": "^23.6.0"

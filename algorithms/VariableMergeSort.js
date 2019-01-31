@@ -12,7 +12,7 @@ const mergeMapCompare = {
 }
 
 
-function mergeSort(arr, setting=SORT_SETTING.ASC) { // descending
+function mergeSort(arr, setting=SORT_SETTING.ASC) {
   if(arr.length <= 1) return arr
   const mid = Math.floor(arr.length/2)
   return mergeArray(
