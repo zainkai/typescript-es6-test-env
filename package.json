@@ -19,10 +19,11 @@
   },
   "homepage": "https://github.com/zainkai/es6-test-env#readme",
   "dependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-typescript": "^7.1.0"
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-plugin-transform-class-properties": "^6.24.1"
   },
   "devDependencies": {
     "jest": "^23.6.0"
